@@ -71,8 +71,8 @@ Copyright (c) Nicolas Gallagher and Jonathan Neal
 	height: 35px;
 }*/
 #main{
-    /* padding: 0px; */
-    /* margin: 1px 0px 0px; */
+    padding: 0px;
+    margin: 1px 0px 0px;
     height:300px;
     width:700px;
     font-size: 86%;
