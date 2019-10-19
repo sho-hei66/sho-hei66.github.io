@@ -37,15 +37,13 @@ Copyright (c) Nicolas Gallagher and Jonathan Neal
 
 body {background: yellowgreen;}
 
-h1 {
+h3 {
     font-size: 1.5em;
     font-weight: normal;
     margin: 0 0 0.5em 0;
     text-shadow: 1px 1px 1px #fff, -1px -1px 1px #000;
-    color: #3df464
+    color: #424a44
 }
-
-
 
 *, *:before, *:after {
     -moz-box-sizing: border-box;
@@ -81,7 +79,7 @@ h1 {
 }*/ 
 
 
-div.id {float: left; border:none;
+div.id {float: right; border:none;
 	width: 40%; height: 65px;
 	background-color: rgba(100,190,156,0.6);
 	padding:1em;
