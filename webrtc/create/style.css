@@ -138,6 +138,6 @@ div.mine-v {
 }
 
 div.comment {
-    float: left;border:none;width:100;
+    float: left;border:none; width: 70px;
     height:100px;padding:0em;border-radius: 1%;
 }
