@@ -1,11 +1,11 @@
 <?php
 
-/* •Ï”‚Ì’è‹` */////////////////////////////////////////////////////////////////////
-  $setchar='Shift_JIS';/* “ú–{Œê•¶šƒZƒbƒg UTF-8, Shift_JIS, EUC-JP,ISO-2022-JP */
-  $pdate=$date=date("<b>Y/m/d H:i </b>");/* “ú©“®‹L“ü‚·‚é‚Æ‚«İ’è */
-  $lmt=100;/* “Še•¶š”§ŒÀ */
-  $kugiri='<hr style="border:1px solid #eee">';/* ‹L–‚Ì‹æØ‚è */
-/* ‚±‚±‚Ü‚Å *///////////////////////////////////////////////////////////////////////
+/* ï¿½Ïï¿½ï¿½Ì’ï¿½` */////////////////////////////////////////////////////////////////////
+  $setchar='Shift_JIS';/* ï¿½ï¿½ï¿½{ï¿½ê•¶ï¿½ï¿½ï¿½Zï¿½bï¿½g UTF-8, Shift_JIS, EUC-JP,ISO-2022-JP */
+  $pdate=$date=date("<b>Y/m/d H:i </b>");/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½İ’ï¿½ */
+  $lmt=100;/* ï¿½ï¿½ï¿½eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
+  $kugiri='<hr style="border:1px solid #eee">';/* ï¿½Lï¿½ï¿½ï¿½Ì‹ï¿½Ø‚ï¿½ */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ *///////////////////////////////////////////////////////////////////////
 
   mb_language("Japanese");
   ini_set('mbstring.internal_encoding',$setchar);
@@ -22,7 +22,7 @@
   else $process[$key][stripslashes($k)]=stripslashes($v);}}
   unset($process);}
   if(file_exists("hpcomment.msg"))$comment=file_get_contents("hpcomment.msg");
-  $_POST['comment']=str_replace('@','  ',$_POST['comment']);
+  $_POST['comment']=str_replace('ï¿½@','  ',$_POST['comment']);
   if(!preg_match("/[\e\200-\377]/",$_POST['comment'])||mb_strlen($_POST['comment'])>$lmt)$_POST['comment']="";
   if($_POST['comment']){$_POST['comment']=preg_replace("/(\x20|<br>)+$/i","",$_POST['comment']);
   $m1=array('&','"','#','$','%','\'','`','<','>','=','?','/');
