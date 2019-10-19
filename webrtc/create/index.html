@@ -14,24 +14,28 @@
      <div id="header">
             <div id="header_title"> <font size="6" color="#ff0000">JPhack_NG1913_17:52</font></div>
             <div id="headinfo">&nbsp;</div>
+            <form id="end-call" class="pure-form">
+                    <p>Currently in call with <span id="their-id">...</span></p>
+                    <button href="#" class="pure-button pure-button-success" type="submit">End Call</button>
+              </form>
             </div>
+            
         </div>
+    <!-- center-->
+    <p>Your id: <span id="my-id">...</span></p>
+    <p>Share this id with others so they can call you.</p>
+    <h3>Make a call</h3>
+    <form id="make-call" class="pure-form">
+          <input type="text" placeholder="Call user id..." id="callto-id">
+          <button href="#" class="pure-button pure-button-success" type="submit">Call</button>
+    </form>
+    
      <!-- Video area -->
      <div class="pure-u-2-3" id="video-container">
         <video id="their-video" autoplay playsinline></video>
         <video id="my-video" muted="true" autoplay playsinline></video>
           </div>
-	  <p>Your id: <span id="my-id">...</span></p>
-	  <p>Share this id with others so they can call you.</p>
-	  <h3>Make a call</h3>
-	  <form id="make-call" class="pure-form">
-            <input type="text" placeholder="Call user id..." id="callto-id">
-            <button href="#" class="pure-button pure-button-success" type="submit">Call</button>
-	  </form>
-	  <form id="end-call" class="pure-form">
-            <p>Currently in call with <span id="their-id">...</span></p>
-            <button href="#" class="pure-button pure-button-success" type="submit">End Call</button>
-	  </form>
+	  
       </div>
 
       
