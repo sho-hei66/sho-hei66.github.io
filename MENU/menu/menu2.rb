@@ -12,16 +12,22 @@ name = c["name"]
 cmt  = c["comment"]
 time  = Time.now
 
-print " <!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\"
- \"http://www.w3.org/TR/html4/strict.dtd\">
-<html lang=\"ja\">
-  <head>
-    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">
-    <meta http-equiv=\"Content-Style-Type\" content=\"text/css\">
-    <meta name=\"author\" content=\"HOMMA Kanan\">
-    <meta name=\"description\" content=\"\">
-    <meta name=\"keywords\" content=\"Menu, card, entertainment,\">
-    <title>Card Duel</title>
+print "Content-type: text/html; charset=UTF-8\n\n"
+
+
+print " <!DOCTYPE html>
+<html lang=\"ja\">      
+<head>
+<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">
+<meta http-equiv=\"Content-Style-Type\" content=\"text/css\">
+<meta name=\"author\" content=\"yufu,nuuma,codev,HOMMA Kanan\">
+<meta name=\"description\" content=\"\">
+<meta name=\"keywords\" content=\"Menu, card, entertainment,chat\">
+<script type=\"text/javascript\" src=\"https://code.jquery.com/jquery-3.2.1.min.js\"></script>
+<script type=\"text/javascript\" src=\"https://cdn.webrtc.ecl.ntt.com/skyway-latest.js\"></script>
+<script type=\"text/javascript\" src=\"webrtc.js\"></script>
+
+<title>Duentta</title>
     <style type=\"text/css\">
       <!--
       body {background-color: #90ee90;}
@@ -86,16 +92,14 @@ print " <!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\"
 		   z-index: 0;
 		   background-color: #fbffd6;}
       
-      
-      
       #tabcheck1:checked ~ #tabcontent1 { display: block; }
       #tabcheck2:checked ~ #tabcontent2 { display: block; }
       #tabcheck3:checked ~ #tabcontent3 { display: block; }
       
-      
       -->
     </style>
   </head>\n"
+
 
 bbs = PStore.new("data.db")
 bbs.transaction do
@@ -112,18 +116,21 @@ bbs.transaction do
 
  print" <body>
 <form method=\"POST\" action=\"./menu2.rb\">\n"
- 
+
+ print '<h3>参加したい部屋から挑戦したいIDを選んでゲームスタート</h3>'
+       
 print "<div class=\"tab\">
       <input type=\"radio\" name=\"tabset\" id=\"tabcheck1\" checked>
-      <label for=\"tabcheck1\"class=\"taba\">ナブラ演算子ゲーム</label>
+      <label for=\"tabcheck1\"class=\"taba\">ポケモンカード</label>
       <input type=\"radio\" name=\"tabset\" id=\"tabcheck2\"        >
-      <label for=\"tabcheck2\"class=\"taba\">ポケモンカード</label>
+      <label for=\"tabcheck2\"class=\"taba\">ナブラ演算子ゲーム</label>
       <input type=\"radio\" name=\"tabset\" id=\"tabcheck3\"        >
       <label for=\"tabcheck3\" class=\"taba\">遊戯王</label>\n"
       
-print '<div class=\"tabcontent\" id=\"tabcontent1\"><br><h2>Enter your ID</h2><ul>
+print '<div class="tabcontent" id="tabcontent1"><br><h2>Welcome to Pokemon card room!</h2><ul>
+      <p>Your id: <span id="my-id">...</span></p>
       <p>   
-      NAME: <input name="name" type="text" maxlength="40"><br>
+      Enter Your ID: <input name="name" type="text" maxlength="17"><br>
       </textarea><br>
       <input type="submit" value="送信">
       <input type="reset" value="reset"><br>
@@ -133,16 +140,19 @@ print '<div class=\"tabcontent\" id=\"tabcontent1\"><br><h2>Enter your ID</h2><u
           data[y][0] <=> data[x][0]  # 日付の新しい順にソート
         }
       day = data[i][0]  # 第0要素=日付
-      printf(" <dt> %s\n", i)  # キー(つまり飲んだものの名前)
       printf(" <dd> 記載日: %s<br>\n", day.strftime("%Y/%m/%d/ %X"))
+      # printf(" <dt> %s\n", i)
+      printf(" <a href=https://sho-hei66.github.io/webrtc/create/>%s</a> さん\n", i)# キー(つまり飲んだものの名前)
+      printf("<br> (↑をコピーして Make a call) <br><br>")
     end
+    
     print "</dl>\n"  # 定義環境終了
     print '</div>
                 
-      <div class=\"tabcontent\" id=\"tabcontent2\">
-	   <br><h2>Enter Your ID</h2><ul>
+      <div class="tabcontent" id="tabcontent2">
+      <br><h2>Welcome to Nabla operator game!</h2><ul>
       <p>        
-      NAME: <input name="name" type="text" maxlength="40"><br>
+      Enter Your ID: <input name="name" type="text" maxlength="17"><br>
       </textarea><br>
       <input type="submit" value="送信">
       <input type="reset" value="reset"><br>
@@ -152,18 +162,20 @@ print '<div class=\"tabcontent\" id=\"tabcontent1\"><br><h2>Enter your ID</h2><u
           data[y][0] <=> data[x][0]  # 日付の新しい順にソート
         }
       day = data[i][0]  # 第0要素=日付
-      printf(" <dt> %s\n", i)  # キー(つまり飲んだものの名前)
       printf(" <dd> 記載日: %s<br>\n", day.strftime("%Y/%m/%d/ %X"))
+      printf(" <a href=https://sho-hei66.github.io/webrtc/create/>%s</a> さん\n", i)
+      printf("<br> (↑をコピーして Make a call)")
+      #printf(" <dt> %s\n", i)  # キー(つまり飲んだものの名前)
     end
-    print "</dl>    
+    print "<br></dl>    
     </br>\n"
     
     print '</div>
           
-      <div class=\"tabcontent\" id=\"tabcontent3\">
-	   <br><h2>Enter Your ID</h2><ul>
+      <div class="tabcontent" id="tabcontent3">
+	   <br><h2>Welcom to Yu-Gi-Oh!</h2><ul>
       <p>        
-      NAME: <input name="name" type="text" maxlength="40"><br>
+      ID: <input name="name" type="text" maxlength="17"><br>
       </textarea><br>
       <input type="submit" value="送信">
       <input type="reset" value="reset"><br>
@@ -173,8 +185,9 @@ print '<div class=\"tabcontent\" id=\"tabcontent1\"><br><h2>Enter your ID</h2><u
           data[y][0] <=> data[x][0]  # 日付の新しい順にソート
         }
       day = data[i][0]  # 第0要素=日付
-      printf(" <dt> %s\n", i)  # キー(つまり飲んだものの名前)
       printf(" <dd> 記載日: %s<br>\n", day.strftime("%Y/%m/%d/ %X"))
+      printf(" <a href=https://sho-hei66.github.io/webrtc/create/>%s</a>\n", i)
+      #printf(" <dt> %s\n", i)  # キー(つまり飲んだものの名前)
     end
     
     # <!-- <p>New map name : <input name=\"name\" type=\"text\" maxlength=\"40\"><br> -->
