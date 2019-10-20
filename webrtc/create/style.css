@@ -35,7 +35,8 @@ Copyright (c) Nicolas Gallagher and Jonathan Neal
 }
 
 
-body {background: yellowgreen;}
+/* body {background: yellowgreen;} */
+body {background-image:url("haikei2.jpg");}
 
 h3 {
     font-size: 1.5em;
@@ -81,10 +82,10 @@ h3 {
 
 div.String {float: right; border:none;
 	width:43%; height: 238px;
-	background-color: rgba(100,190,156,0.6);
+    background-color: rgba(100,190,156,0.6);
 	padding:1.1em;
 	border-radius: 15%;
-       }
+}
 
 #main{
     padding: 0px;
@@ -117,7 +118,7 @@ div.pure-u-1-3 {
 }
 
 #their-video {
-    width: 100%;
+    width: 75%;
     height: auto;
     /* max-height: 480px; */
     background-color: #eee;
