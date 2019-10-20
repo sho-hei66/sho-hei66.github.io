@@ -1,4 +1,4 @@
-/*!
+//*!
 Pure v0.3.0
 Copyright 2013 Yahoo! Inc. All rights reserved.
 Licensed under the BSD License.
@@ -103,7 +103,7 @@ div.String {float: right; border:none;
 
 #my-video {
     margin-top: 15px;
-    margin-left:300px;
+    margin-left:400px;
     width: 280px;
     height: auto;
     background-color: #eee;
