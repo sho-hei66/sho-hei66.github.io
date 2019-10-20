@@ -95,14 +95,18 @@ div.String {float: right; border:none;
     color: #666666;
     list-style-type: none;
 }
-
+div.pure-u-1-3 {
+    width:500px;
+    height:110px;
+}
+/*//tamehi 1154
 #pure-u-1-3 {
     width:300px;
     height:50px;
     padding: 10px 0 0;
     margin: 0;
 }
-
+*/
 #my-video {
     margin-top: 15px;
     margin-left:300px;
